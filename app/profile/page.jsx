@@ -21,7 +21,12 @@ const page = () => {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`${API_URL}/user/${id}`);
+      const response = await axios.get(`${API_URL}/user/${id}`, 
+      {
+        headers: {
+          "ngrok-skip-browser-warning": "69420",
+        },
+      });
       setUsername(response.data.data.username);
       setBio(response.data.data.bio);
       setPict(response.data.data.profilePicture);
@@ -61,6 +66,7 @@ const page = () => {
           await axios.put(`${API_URL}/user/${id}`, formData, {
             headers: {
               Accept: "*/*",
+              "ngrok-skip-browser-warning": "69420"
               // No need to set Content-Type; it will be set automatically by FormData
             },
           });

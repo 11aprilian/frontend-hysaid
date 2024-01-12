@@ -31,6 +31,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
           {
             headers: {
               "Content-Type": "application/json",
+              "ngrok-skip-browser-warning": "69420"
             },
           }
         );

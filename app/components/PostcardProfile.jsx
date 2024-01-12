@@ -25,7 +25,12 @@ const PostcardProfile = ( postData ) => {
 
   const fetchComment = async (postId) => {
     try {
-      const response = await axios.get(`${API_URL}/comment/post/${postId}`);
+      const response = await axios.get(`${API_URL}/comment/post/${postId}`,
+      {
+        headers: {
+          "ngrok-skip-browser-warning": "69420",
+        },
+      });
       setComments(response.data.data);
     } catch (error) {
       console.error("Error fetching data:", error);
