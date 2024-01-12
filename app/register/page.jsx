@@ -47,7 +47,7 @@ const Page = () => {
     <div>
       <AOS>
       <section className="p-6">
-        <div className="flex justify-center container mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+        <div className="flex h-screen justify-center container mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
           <div className="px-6 py-16 rounded-md">
             <span data-aos="fade-down" className="block mb-2">Say what you want to say</span>
             <h1 data-aos="fade-down" className="text-5xl font-extrabold">
@@ -58,7 +58,7 @@ const Page = () => {
               Bergabung dengan HySaid dan luapkan pikiranmu
             </p>
 
-            <form data-aos="fade-up" className=" space-y-3">
+            <form className=" space-y-3">
               <div>
                 <input
                   id="name"
@@ -99,7 +99,7 @@ const Page = () => {
               </button>
             </form>
 
-            <p data-aos="fade-up" className="my-8">
+            <p className="my-8">
               Punya akun?
               Login{' '}
               <span className="text-emerald-400">

@@ -42,7 +42,7 @@ const page = () => {
       <AOS>
       <section className="p-6">
         <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
-          <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2">
+          <div className="w-full h-screen px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2">
             <span data-aos="fade-down" className="block mb-2">Say what you want to say</span>
             <h1 data-aos="fade-down" className="text-5xl font-extrabold">
               Welcome to Hy<span className="text-emerald-400">Said</span>
@@ -52,7 +52,7 @@ const page = () => {
               Temukan Inspirasi dari Pengalaman Pengguna HySaid
             </p>
 
-            <form data-aos="fade-up" className="self-stretch space-y-3">
+            <form className="self-stretch space-y-3">
               <div>
                 <input
                   id="name"
@@ -82,7 +82,7 @@ const page = () => {
               </button>
             </form>
 
-            <p data-aos="fade-up" className="my-8">
+            <p className="my-8">
               Belum punya akun? Daftar{" "}
               <span className="text-emerald-400">
                 <Link href={"/register"}>disini</Link>
