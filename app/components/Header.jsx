@@ -13,9 +13,7 @@ const Header = () => {
           <h1 className="text-2xl font-bold">
             Hy<span className="text-emerald-400">Said</span>
           </h1>
-          <p className="text-gray-800 font-bold">
-            Hallo, <span className="text-emerald-500">{username}</span>
-          </p>
+
         </div>
       </nav>
     </div>
