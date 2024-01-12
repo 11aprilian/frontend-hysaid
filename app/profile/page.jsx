@@ -37,7 +37,12 @@ const page = () => {
 
   const fetchPost = async () => {
     try {
-      const response = await axios.get(`${API_URL}/post/user/${id}`);
+      const response = await axios.get(`${API_URL}/post/user/${id}`,
+      {
+        headers: {
+          "ngrok-skip-browser-warning": "69420",
+        },
+      });
       setDataPost(response.data.data);
     } catch (error) {
       console.error("Error fetching data:", error);
