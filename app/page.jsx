@@ -14,7 +14,7 @@ const Page = () => {
 
   const fetchPost = async () => {
     try {
-      const response = await axios.get(`https://82a5-103-169-135-222.ngrok-free.app/post/`);
+      const response = await axios.get(`${API_URL}/post/`);
       setDataPost(response.data.data);
     } catch (error) {
       console.error("Error fetching data:", error);
