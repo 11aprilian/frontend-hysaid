@@ -47,7 +47,7 @@ const Postcard = (postData) => {
           <div className="flex items-start px-4 py-6">
             <img
               className="w-12 h-12 rounded-full object-cover mr-4 shadow"
-              src={API_URL + post.user.profilePicture}
+              src={post.user.profilePicture}
               alt="gr"
             />
             {/* <IoPersonOutline className="w-12 h-12 rounded-full object-cover mr-4 shadow" /> */}

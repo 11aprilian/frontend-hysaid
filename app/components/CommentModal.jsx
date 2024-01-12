@@ -79,7 +79,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
       contentLabel="Comment Modal"
       style={customStyles}
     >
-      <div data-aos="fade-up" className="scroll-container max-h-80 ">
+      <div data-aos="fade-up" className="scroll-container h-full ">
       <button
           onClick={closeModal}
           className="absolute top-0 right-1 text-gray-600 hover:text-gray-800 cursor-pointer"
@@ -92,7 +92,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
               <div className="flex items-center">
                 <img
                   className="w-8 h-8 rounded-full object-cover mr-4 shadow"
-                  src={API_URL + comment.user.profilePicture}
+                  src={comment.user.profilePicture}
                   alt="gr"
                 />
                 <div>
@@ -115,7 +115,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
             value={content}
             type="text"
             name="comment"
-            className="bg-transparent"
+            className="bg-[#f5f5f5]"
             placeholder="Add a comment"
           />
           <button

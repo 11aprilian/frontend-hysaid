@@ -114,7 +114,7 @@ const page = () => {
                 <img
                   className="w-40 h-40 rounded-full object-cover shadow"
                   src={
-                    selectedImage ? URL.createObjectURL(selectedImage) : API_URL + pict
+                    selectedImage ? URL.createObjectURL(selectedImage) : pict
                   }
                   alt="gr"
                 />
