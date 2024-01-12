@@ -92,7 +92,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
               <div className="flex items-center">
                 <img
                   className="w-8 h-8 rounded-full object-cover mr-4 shadow"
-                  src={comment.user.profilePicture}
+                  src={API_URL + comment.user.profilePicture}
                   alt="gr"
                 />
                 <div>
