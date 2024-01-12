@@ -25,6 +25,7 @@ const Page = () => {
     fetchPost();
   }, []);
 
+  console.log(dataPost);
   return (
     <div>
       <AOS>
