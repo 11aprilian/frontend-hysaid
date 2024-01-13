@@ -22,6 +22,7 @@ const Navbar = () => {
       showCancelButton: true,
       confirmButtonText: 'Yups, dah males!',
       cancelButtonText: 'Ga Jadi',
+
     }).then((result) => {
       if (result.isConfirmed) {
         Cookies.remove("token");

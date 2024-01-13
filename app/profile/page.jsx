@@ -8,6 +8,7 @@ import PostcardProfile from "../components/PostcardProfile";
 import { CiEdit } from "react-icons/ci";
 import API_URL from "../url";
 import AOS from "../components/AOS";
+import AvatarSelect from "../components/AvatarSelect"
 
 const page = () => {
   const { id } = useAuthentication();
@@ -16,8 +17,23 @@ const page = () => {
   const [bio, setBio] = useState("");
   const [pict, setPict] = useState("");
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
+  const [selectedAvatar, setSelectedAvatar] = useState("");
+
+  const handleSelectAvatar = (avatarSrc) => {
+    setSelectedAvatar(avatarSrc);
+
+  };
+
+  const openModal = (postId) => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const fetchProfile = async () => {
     try {
@@ -51,20 +67,25 @@ const page = () => {
 
   const updateProfile = async () => {
     try {
-      const formData = new FormData();
-      formData.append("username", username);
-      formData.append("bio", bio);
-
-      // Hanya menambahkan profilePicture ke FormData jika selectedImage tidak null
-      if (selectedImage) {
-        formData.append("profilePicture", selectedImage);
+      const formData = {
+        username: username,
+        bio: bio,
+        profilePicture: selectedAvatar,
       }
+      
+
+      // if (selectedImage) {
+      //   formData.append("profilePicture", selectedImage);
+      // }
 
       Swal.fire({
-        text: "Update Profile?",
+        title: 'Update Profil',
+        text: "Yakin?",
         showCancelButton: true,
         confirmButtonText: "Yoi",
         cancelButtonText: "Ga Jadi",
+        confirmButtonColor: '#10b981'
+        
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios.put(`${API_URL}/user/${id}`, formData, {
@@ -98,21 +119,21 @@ const page = () => {
             <div className="w-full flex justify-center">
               <div data-aos="fade-down" className="relative">
                 <div className="flex justify-end">
-                  <button onClick={()  => fileInputRef.current.click()}>
+                  <button onClick={() => openModal()}>
                     <CiEdit />
                   </button>
-                  <input
+                  {/* <input
                     type="file"
                     accept="image/*"
                     style={{ display: "none" }}
                     ref={fileInputRef}
                     onChange={(e) => setSelectedImage(e.target.files[0])}
-                  />
+                  /> */}
                 </div>
                 <img
                   className="w-40 h-40 rounded-full object-cover shadow"
                   src={
-                    selectedImage ? URL.createObjectURL(selectedImage) : pict
+                    selectedAvatar ? selectedAvatar : pict
                   }
                   alt="gr"
                 />
@@ -160,6 +181,12 @@ const page = () => {
           <PostcardProfile postData={dataPost}></PostcardProfile>
         </div>
       </AOS>
+
+      <AvatarSelect
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        onSelectAvatar={handleSelectAvatar}
+      />
     </div>
   );
 };

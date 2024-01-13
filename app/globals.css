@@ -16,11 +16,24 @@ background: linear-gradient(180deg, rgba(197,213,206,1) 0%, rgba(255,255,255,1) 
 }
 
 .scroll-container::-webkit-scrollbar {
-  width: 2px; /* Atur lebar scrollbar sesuai keinginan */
+  width: 2px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
+.scroll-x {
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scroll-x::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scroll-x::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 

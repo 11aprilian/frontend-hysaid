@@ -20,7 +20,9 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
   const setNewComment = async () => {
     if (content === "") {
       Swal.fire({
-        text: "Kosong njirr!",
+        title: 'Kosong njir',
+        text: "Jangan bengong woy!",
+        confirmButtonColor: '#10b981'
       });
     } else {
       try {
@@ -48,7 +50,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
 
   const customStyles = {
     content: {
-      backgroundColor: "#f5f5f5",
+      backgroundColor: "#f1f5f9",
       borderRadius: "10px",
       width: "80%",
       height: "75%",

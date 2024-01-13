@@ -16,7 +16,9 @@ const page = () => {
   const setNewPost = async () => {
     if ( content === "" ) {
       Swal.fire({
-        text: "Kosong njirr!",
+        title:'Kosong Njir',
+        text: "Jangan bengong woy!",
+        confirmButtonColor: '#10b981'
       });
     }else{
       let postData = {
@@ -34,7 +36,9 @@ const page = () => {
           },
         });
         Swal.fire({
-          text: "Posting Berhasil"
+          title: 'Posting Berhasil',
+          text: "You've said!",
+          confirmButtonColor: '#10b981'
         }).then(() => {
           router.push('/');
         })
@@ -42,7 +46,6 @@ const page = () => {
         console.log(error);
         Swal.fire({
           text: "Posting Gagal!",
-          icon: "error",
         });
       }
     }

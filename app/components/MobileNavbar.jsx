@@ -22,6 +22,7 @@ const MobileNavbar = () => {
       showCancelButton: true,
       confirmButtonText: 'Yups, dah males!',
       cancelButtonText: 'Ga Jadi',
+      confirmButtonColor: '#10b981'
     }).then((result) => {
       if (result.isConfirmed) {
         Cookies.remove("token");
