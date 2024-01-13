@@ -30,6 +30,7 @@ const Page = () => {
         username,
         password,
         bio: 'Ini Biomu, Editen dewe!',
+        profilePicture: 'images/avatar/3.png'
       });
       Swal.fire({
         text: 'Selamat Anda Berhasil Registrasi, Silahkan login!',
