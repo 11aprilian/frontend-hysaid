@@ -46,6 +46,7 @@ const page = () => {
       setUsername(response.data.data.username);
       setBio(response.data.data.bio);
       setPict(response.data.data.profilePicture);
+      setSelectedAvatar(response.data.data.profilePicture);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -133,7 +134,7 @@ const page = () => {
                 <img
                   className="w-40 h-40 rounded-full object-cover shadow"
                   src={
-                    selectedAvatar ? selectedAvatar : pict
+                    selectedAvatar 
                   }
                   alt="gr"
                 />
