@@ -61,7 +61,6 @@ const page = () => {
       }
 
       Swal.fire({
-        icon: "question",
         text: "Update Profile?",
         showCancelButton: true,
         confirmButtonText: "Yoi",
@@ -83,7 +82,6 @@ const page = () => {
       console.log(error);
       Swal.fire({
         text: "Gagal Update!",
-        icon: "error",
       });
     }
   };

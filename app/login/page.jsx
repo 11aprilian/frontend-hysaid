@@ -23,7 +23,6 @@ const page = () => {
       Cookies.set("token", response.data.token, { path: "/" });
       Cookies.set("id", response.data.id, { path: "/" });
       Swal.fire({
-        icon: "success",
         text: "Selamat Datang di HySaid!",
       }).then(() => {
         router.push("/");

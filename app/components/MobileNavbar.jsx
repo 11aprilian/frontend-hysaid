@@ -19,7 +19,6 @@ const MobileNavbar = () => {
     Swal.fire({
       title: 'Logout',
       text: 'Mau Logout?',
-      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yups, dah males!',
       cancelButtonText: 'Ga Jadi',
@@ -33,7 +32,7 @@ const MobileNavbar = () => {
   };
   return (
     <div>
-      <div className=" fixed z-50 w-80 h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-lg bottom-4 left-1/2">
+      <div className=" fixed z-50 w-80 h-16 max-w-lg -translate-x-1/2 bg-slate-100 border border-gray-200 rounded-lg bottom-4 left-1/2">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
           <Link
             href={"/"}

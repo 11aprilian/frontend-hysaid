@@ -20,7 +20,6 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
   const setNewComment = async () => {
     if (content === "") {
       Swal.fire({
-        icon: "error",
         text: "Kosong njirr!",
       });
     } else {
@@ -34,11 +33,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
               "ngrok-skip-browser-warning": "69420"
             },
           }
-        );
-        Swal.fire({
-          icon: "success",
-          text: "Komentar Ditambahkan",
-        }).then(() => {
+        ).then(() => {
           setContent("");
           fetchComment(postId);
         });
@@ -46,7 +41,6 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
         console.log(error);
         Swal.fire({
           text: "Komentar Gagal!",
-          icon: "error",
         });
       }
     }
@@ -79,7 +73,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
       contentLabel="Comment Modal"
       style={customStyles}
     >
-      <div data-aos="fade-up" className="scroll-container h-full ">
+      <div data-aos="fade-up" className="scroll-container h-full">
       <button
           onClick={closeModal}
           className="absolute top-0 right-1 text-gray-600 hover:text-gray-800 cursor-pointer"
@@ -109,7 +103,7 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
       </div>
 
       <div className="flex justify-center">
-        <form className="fixed bottom-0 p-4 flex">
+        <form className="bottom-0 p-4 flex">
           <input
             onChange={(e) => setContent(e.target.value)}
             value={content}

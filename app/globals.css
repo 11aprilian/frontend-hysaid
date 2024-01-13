@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+background: rgb(197,213,206);
+background: linear-gradient(180deg, rgba(197,213,206,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .scroll-container {
@@ -25,7 +16,7 @@ body {
 }
 
 .scroll-container::-webkit-scrollbar {
-  width: 8px; /* Atur lebar scrollbar sesuai keinginan */
+  width: 2px; /* Atur lebar scrollbar sesuai keinginan */
 }
 
 .scroll-container::-webkit-scrollbar-thumb {

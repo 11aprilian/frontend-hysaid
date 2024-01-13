@@ -16,7 +16,6 @@ const page = () => {
   const setNewPost = async () => {
     if ( content === "" ) {
       Swal.fire({
-        icon: "error",
         text: "Kosong njirr!",
       });
     }else{
@@ -35,7 +34,6 @@ const page = () => {
           },
         });
         Swal.fire({
-          icon: "success",
           text: "Posting Berhasil"
         }).then(() => {
           router.push('/');

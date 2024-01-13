@@ -32,7 +32,6 @@ const Page = () => {
         bio: 'Ini Biomu, Editen dewe!',
       });
       Swal.fire({
-        icon: 'success',
         text: 'Selamat Anda Berhasil Registrasi, Silahkan login!',
       }).then(() => {
         router.push('/login');

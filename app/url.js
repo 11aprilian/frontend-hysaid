@@ -1,2 +1,2 @@
-const API_URL = "https://bfbd-103-169-135-222.ngrok-free.app"
+const API_URL = "http://localhost:3011"
 export default API_URL

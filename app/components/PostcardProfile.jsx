@@ -68,7 +68,7 @@ const PostcardProfile = ( postData ) => {
           <img
               className="w-12 h-12 rounded-full object-cover mr-4 shadow"
               src={post.user.profilePicture}
-              alt="gr"
+              alt=""
             />
             {/* <IoPersonOutline className="w-12 h-12 rounded-full object-cover mr-4 shadow" /> */}
             <div className="">
