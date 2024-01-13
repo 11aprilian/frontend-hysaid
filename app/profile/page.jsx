@@ -175,7 +175,7 @@ const page = () => {
         </div>
         <MobileNavbar />
         <div data-aos="fade-down">
-          <h1 className="text-slate-600 ms-8 font-bold">Postinganmu</h1>
+          <h1 className="text-slate-600 text-sm ms-8 font-bold">POSTINGANMU</h1>
         </div>
         <div>
           <PostcardProfile postData={dataPost}></PostcardProfile>

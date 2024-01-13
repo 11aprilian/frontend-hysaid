@@ -9,6 +9,7 @@ const Header = () => {
   const id = Cookies.get("id");
   const [username, setUsername] = useState("");
   const [pict, setPict] = useState("");
+  const defaultAva = 'images/avatar/default.png'
 
   const fetchUser = async () => {
     try {
@@ -48,7 +49,7 @@ const Header = () => {
               <Link href={"/profile"}>
               <img
                 className="w-12 h-12 rounded-full object-cover mr-2 shadow"
-                src={pict}
+                src={pict ? pict : defaultAva}
                 alt=""
               /></Link>  
             </div>

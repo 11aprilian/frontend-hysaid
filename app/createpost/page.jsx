@@ -55,21 +55,21 @@ const page = () => {
   return (
     <div className="h-screen">
       <AOS>
-      <div data-aos="fade-down" className="heading text-center font-bold text-2xl m-5 text-gray-800">
+      <div data-aos="fade-down" className="heading text-center font-bold text-2xl m-5 text-gray-700">
         Say It, {username}
       </div>
 
       <div data-aos="fade-up" className="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl rounded-lg">
         <textarea
           onChange={(e) => setContent(e.target.value)}
-          className="description rounded-lg bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"
+          className="description rounded-lg bg-slate-100 sec p-3 h-60 border border-gray-300 outline-none"
           value={content}
           placeholder="Apa yang terlintas di benakmu?"
         ></textarea>
 
         <div className="icons flex text-gray-500 m-2">
           <div className="count ml-auto text-gray-400 text-xs font-semibold">
-            0/300
+            
           </div>
         </div>
 
