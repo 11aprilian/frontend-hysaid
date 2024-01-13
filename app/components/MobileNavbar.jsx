@@ -73,7 +73,7 @@ const MobileNavbar = () => {
               href={"/createpost"}
               data-tooltip-target="tooltip-new"
               type="button"
-              className="inline-flex items-center justify-center w-10 h-10 font-medium bg-emerald-400 rounded-full hover:bg-emerald-300 group focus:ring-4 focus:ring-blue-300 focus:outline-none"
+              className="inline-flex items-center justify-center w-10 h-10 font-medium bg-emerald-400 rounded-full hover:bg-emerald-300 group "
             >
               <IoCreateOutline />
               <span className="sr-only">Post</span>
