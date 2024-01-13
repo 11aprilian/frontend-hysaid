@@ -58,7 +58,7 @@ const PostcardProfile = (postData) => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       {post.length === 0 ? (
         <div
           data-aos="fade-down"

@@ -6,7 +6,13 @@ import Swal from "sweetalert2";
 import { useAuthentication } from "../utils/auth";
 import API_URL from "../url";
 
-const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) => {
+const CommentModal = ({
+  isOpen,
+  closeModal,
+  comments,
+  fetchComment,
+  postId,
+}) => {
   const { token, id, username } = useAuthentication();
   const [content, setContent] = useState("");
 
@@ -20,25 +26,23 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
   const setNewComment = async () => {
     if (content === "") {
       Swal.fire({
-        title: 'Kosong njir',
+        title: "Kosong njir",
         text: "Jangan bengong woy!",
-        confirmButtonColor: '#10b981'
+        confirmButtonColor: "#10b981",
       });
     } else {
       try {
-        const newComment = await axios.post(
-          `${API_URL}/comment`,
-          commentData,
-          {
+        const newComment = await axios
+          .post(`${API_URL}/comment`, commentData, {
             headers: {
               "Content-Type": "application/json",
-              "ngrok-skip-browser-warning": "69420"
+              "ngrok-skip-browser-warning": "69420",
             },
-          }
-        ).then(() => {
-          setContent("");
-          fetchComment(postId);
-        });
+          })
+          .then(() => {
+            setContent("");
+            fetchComment(postId);
+          });
       } catch (error) {
         console.log(error);
         Swal.fire({
@@ -75,13 +79,33 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
       contentLabel="Comment Modal"
       style={customStyles}
     >
-      <div data-aos="fade-up" className="scroll-container h-full">
-      <button
+      <div className="">
+        {/* <button
           onClick={closeModal}
-          className="absolute top-0 right-1 text-gray-600 hover:text-gray-800 cursor-pointer"
+          className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 cursor-pointer"
         >
           &times;
-        </button>
+        </button> */}
+        <form className="mt-2 p-4 flex justify-center">
+          <input
+            onChange={(e) => setContent(e.target.value)}
+            value={content}
+            type="text"
+            name="comment"
+            className="bg-transparent w-full"
+            placeholder="Add a comment"
+          />
+          <button
+            onClick={handleFormSubmit}
+            type="submit"
+            className="rounded text-white p-1 px-2 text-sm bg-emerald-400 hover:bg-emerald-300"
+          >
+            Bacotin
+          </button>
+        </form>
+      </div>
+
+      <div data-aos="fade-up" className="scroll-container h-full">
         <ul className="space-y-4 p-4">
           {comments.map((comment, index) => (
             <li key={index}>
@@ -102,26 +126,6 @@ const CommentModal = ({ isOpen, closeModal, comments, fetchComment, postId }) =>
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="flex justify-center">
-        <form className="bottom-0 p-4 flex">
-          <input
-            onChange={(e) => setContent(e.target.value)}
-            value={content}
-            type="text"
-            name="comment"
-            className="bg-[#f5f5f5]"
-            placeholder="Add a comment"
-          />
-          <button
-            onClick={handleFormSubmit}
-            type="submit"
-            className="rounded text-white p-1 px-2 text-sm bg-emerald-400 hover:bg-emerald-300"
-          >
-            Bacotin
-          </button>
-        </form>
       </div>
     </Modal>
   );
