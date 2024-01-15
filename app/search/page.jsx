@@ -50,19 +50,19 @@ const page = () => {
         <div className="w-full h-screen max-w-screen-xl mx-auto px-6">
           <div className="flex justify-center p-4 px-3 py-10">
             <div className="w-full max-w-md">
-              <div className="bg-gray-200 shadow-md rounded-lg px-3 py-2 mb-4">
+              <div className="bg-transparent shadow-md rounded-lg px-3 py-2 mb-4">
                 <div className="block text-gray-600 text-lg font-semibold py-2 px-2">
                   Cari Temanmu
                 </div>
-                <div className="flex items-center mb-4 bg-gray-200 rounded-md">
+                <div className="flex items-center mb-4  rounded-md">
                   <div className="pl-2 mr-2 text-gray-600">
                     <MdOutlinePersonSearch size={28} />
                   </div>
                   <input
-                    className="w-full bg-gray-100 rounded-md text-gray-700 leading-tight focus:outline-none py-2 px-2"
+                    className="w-full bg-transparent border border-gray-300 rounded-md text-gray-700 leading-tight focus:outline-none py-2 px-2"
                     id="search"
                     type="text"
-                    placeholder="Cari Disini?"
+                    placeholder="Cari Disini..."
                     value={searchQuery}
                     onChange={handleSearch}
                   />
