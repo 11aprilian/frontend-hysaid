@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import Swal from "sweetalert2";
 import { useAuthentication } from "../utils/auth";
 import API_URL from "../url";
+import Link from "next/link";
 
 const CommentModal = ({
   isOpen,
@@ -116,9 +117,9 @@ const CommentModal = ({
                   alt="gr"
                 />
                 <div>
-                  <h1 className="font-bold text-sm text-gray-800">
+                  <Link href={"/user/" + comment.user._id} className="font-bold text-sm text-gray-800">
                     {comment.user.username}
-                  </h1>
+                  </Link>
                   <p className="text-xs text-gray-600">{comment.content}</p>
                 </div>
               </div>
