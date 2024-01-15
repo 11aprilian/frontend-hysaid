@@ -8,7 +8,7 @@ import API_URL from "../url";
 import { MdOutlinePersonSearch } from "react-icons/md";
 
 const page = () => {
-  const [searchQuery, setSearchQuery] = useState(" ");
+  const [searchQuery, setSearchQuery] = useState("");
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
