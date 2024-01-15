@@ -41,7 +41,7 @@ const page = () => {
           text: "You've said!",
           confirmButtonColor: '#10b981'
         }).then(() => {
-          router.push('/');
+          router.push('/home');
         })
       } catch (error) {
         console.log(error);

@@ -1,44 +1,22 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import Postcard from "./components/Postcard";
-import MobileNavbar from "./components/MobileNavbar";
-import Header from "./components/Header";
-import { useAuthentication } from "./utils/auth";
-import axios from "axios";
-import API_URL from "./url";
-import AOS from "./components/AOS";
+import { useRouter } from 'next/navigation'; 
+import Cookies from 'js-cookie';
 
 const Page = () => {
-  const { token, id, username } = useAuthentication();
-  const [dataPost, setDataPost] = useState([]);
-
-  const fetchPost = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/post/`,
-      {
-        headers: {
-          "ngrok-skip-browser-warning": "69420",
-        },
-      });
-      setDataPost(response.data.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  const router = useRouter();
+  const token = Cookies.get('token');
 
   useEffect(() => {
-    fetchPost();
+    if (!token) {
+      router.push('/login');
+    } else {
+      router.push('/home');
+    }
   }, []);
 
-
   return (
-    <div>
-      <AOS>
-      <Header></Header>
-      <Postcard postData={dataPost}></Postcard>
-      <MobileNavbar></MobileNavbar>
-      </AOS>
-    </div>
+    <div className="h-screen"></div>
   );
 };
 

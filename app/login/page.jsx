@@ -23,7 +23,7 @@ const page = () => {
       Cookies.set("token", response.data.token, { path: "/" });
       Cookies.set("id", response.data.id, { path: "/" });
 
-      router.push("/");
+      router.push("/home");
     } catch (error) {
       Swal.fire({
         title: 'Cek Lagi',
