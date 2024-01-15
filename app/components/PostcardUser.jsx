@@ -1,14 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { FaRegHeart, FaRegCommentAlt } from "react-icons/fa";
-import CommentModal from "./CommentModal";
+import React, { useState } from "react";
+import { FaRegCommentAlt, FaRegTrashAlt } from "react-icons/fa";
+import CommentModalUser from "./CommentModalUser";
 import axios from "axios";
 import API_URL from "../url";
-import Link from "next/link";
+import Swal from "sweetalert2";
 
-const Postcard = (postData) => {
+const PostcardUser = (postData) => {
   const post = postData.postData;
   const [postId, setPostId] = useState("");
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comments, setComments] = useState([]);
 
@@ -36,9 +37,12 @@ const Postcard = (postData) => {
   };
 
   return (
-    <div className="mb-24 h-screen">
+    <div className="h-screen">
       {post.length === 0 ? (
-        <div data-aos="fade-down" className="flex justify-center items-center mx-4 md:mx-auto h-screen my-5 max-w-md md:max-w-2xl">
+        <div
+          data-aos="fade-down"
+          className="flex justify-center items-center mx-4 md:mx-auto h-screen my-5 max-w-md md:max-w-2xl"
+        >
           <p className="text-lg font-semibold text-gray-700">
             Oops, belum ada postingan cuyyy!!
           </p>
@@ -48,21 +52,22 @@ const Postcard = (postData) => {
           <div
             data-aos="fade-up"
             key={post._id}
-            className="flex mx-4 md:mx-auto my-5 max-w-md md:max-w-2xl"
+            className="flex mx-4 md:mx-auto my-5  "
           >
-            <div className="flex items-start px-4 py-6">
-              <Link href={"/user/" + post.user._id}>
+            <div className="flex items-start px-4 py-2">
               <img
                 className="w-12 h-12 rounded-full object-cover mr-4 shadow"
-                src={post.user.profilePicture}
+                src={"../" + post.user.profilePicture}
                 alt=""
               />
-              </Link>
+              {/* <IoPersonOutline className="w-12 h-12 rounded-full object-cover mr-4 shadow" /> */}
               <div className="">
-                <div className="flex items-center justify-between">
-                  <Link href={"/user/" + post.user._id} className="text-lg font-semibold text-gray-800 hover:text-gray-500  -mt-1">
-                    {post.user.username}
-                  </Link>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 -mt-1">
+                      {post.user.username}
+                    </h2>
+                  </div>
                 </div>
                 <small className="text-gray-700">
                   {post.date.slice(0, 10)} {post.date.slice(11, 16)}
@@ -83,7 +88,7 @@ const Postcard = (postData) => {
         ))
       )}
 
-      <CommentModal
+      <CommentModalUser
         isOpen={isModalOpen}
         closeModal={closeModal}
         comments={comments}
@@ -94,4 +99,4 @@ const Postcard = (postData) => {
   );
 };
 
-export default Postcard;
+export default PostcardUser;

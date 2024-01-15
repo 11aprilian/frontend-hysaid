@@ -11,18 +11,17 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 
-
 const MobileNavbar = () => {
   const router = useRouter();
 
   const handleLogout = () => {
     Swal.fire({
-      title: 'Logout',
-      text: 'Mau Logout?',
+      title: "Logout",
+      text: "Mau Logout?",
       showCancelButton: true,
-      confirmButtonText: 'Yups, dah males!',
-      cancelButtonText: 'Ga Jadi',
-      confirmButtonColor: '#10b981'
+      confirmButtonText: "Yups, dah males!",
+      cancelButtonText: "Ga Jadi",
+      confirmButtonColor: "#10b981",
     }).then((result) => {
       if (result.isConfirmed) {
         Cookies.remove("token");
@@ -52,14 +51,15 @@ const MobileNavbar = () => {
             Home
             <div className="tooltip-arrow" data-popper-arrow></div>
           </div>
-          <button
+          <Link
+            href={"/search"}
             data-tooltip-target="tooltip-wallet"
             type="button"
             className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
           >
             <IoSearch />
             <span className="sr-only">Search</span>
-          </button>
+          </Link>
           <div
             id="tooltip-wallet"
             role="tooltip"

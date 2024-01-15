@@ -113,7 +113,7 @@ const page = () => {
     fetchPost();
   }, []);
   return (
-    <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words mb-36 w-full mt-16">
+    <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words mb-28 w-full mt-8">
       <AOS>
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
@@ -132,7 +132,7 @@ const page = () => {
                   /> */}
                 </div>
                 <img
-                  className="w-40 h-40 rounded-full object-cover shadow"
+                  className="w-32 h h-32 rounded-full object-cover shadow"
                   src={
                     selectedAvatar 
                   }
@@ -140,7 +140,7 @@ const page = () => {
                 />
               </div>
             </div>
-            <div className="w-full text-center mt-14"></div>
+            <div className="w-full text-center mt-8"></div>
           </div>
           <div data-aos="fade-down" className="ms-4 mt-4">
             <input

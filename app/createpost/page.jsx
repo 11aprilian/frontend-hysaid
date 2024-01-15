@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useAuthentication } from "../utils/auth";
 import API_URL from "../url";
 import AOS from "../components/AOS";
+import MobileNavbar from "../components/MobileNavbar";
 
 const page = () => {
   const router = useRouter();
@@ -62,7 +63,7 @@ const page = () => {
       <div data-aos="fade-up" className="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl rounded-lg">
         <textarea
           onChange={(e) => setContent(e.target.value)}
-          className="description rounded-lg bg-slate-100 sec p-3 h-60 border border-gray-300 outline-none"
+          className="description rounded-lg bg-transparent sec p-3 h-60 border border-gray-300 outline-none"
           value={content}
           placeholder="Apa yang terlintas di benakmu?"
         ></textarea>
@@ -76,18 +77,19 @@ const page = () => {
         <div className="buttons flex">
           <Link
             href={"/"}
-            className="btn rounded-lg border border-gray-300 p-1 px-4 cursor-pointer text-gray-500 ml-auto"
+            className="btn rounded border border-gray-300 p-1 px-4 cursor-pointer text-gray-500 ml-auto"
           >
             Ga Jadi
           </Link>
           <button
           onClick={(e) => setNewPost(e.preventDefault())}
-          className="btn rounded-lg p-1 px-4 cursor-pointer text-gray-200 ml-2 bg-emerald-500">
+          className="btn rounded p-1 px-4 cursor-pointer text-gray-200 ml-2 bg-emerald-500">
             Post
           </button>
         </div>
       </div>
       </AOS>
+      <MobileNavbar></MobileNavbar>
     </div>
   );
 };
