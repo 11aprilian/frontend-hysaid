@@ -54,6 +54,9 @@ const CommentModal = ({
   };
 
   const customStyles = {
+    overlay: {
+      backgroundColor: 'transparent'
+    },
     content: {
       backgroundColor: "#f1f5f9",
       borderRadius: "10px",
@@ -117,7 +120,7 @@ const CommentModal = ({
                   alt="gr"
                 />
                 <div>
-                  <Link href={"/user/" + comment.user._id} className="font-bold text-sm text-gray-800">
+                  <Link href={"/user/" + comment.user._id} className="font-semibold text-sm text-gray-800">
                     {comment.user.username}
                   </Link>
                   <p className="text-xs text-gray-600">{comment.content}</p>

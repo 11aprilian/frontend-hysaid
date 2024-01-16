@@ -10,12 +10,32 @@ background: linear-gradient(180deg, rgba(197,213,206,1) 0%, rgba(255,255,255,1) 
 }
 
 .scroll-container {
-  overflow-y: scroll !important; /* or overflow-y: auto !important; */
+  overflow-y: scroll !important; 
 }
 
 .scroll-container::-webkit-scrollbar {
   width: 0 !important;
   display: none !important;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 200ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateY(100px); 
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
 }
 
 

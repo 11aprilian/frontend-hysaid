@@ -5,31 +5,11 @@ import {
   IoPersonOutline,
   IoHomeOutline,
   IoSearch,
-  IoLogOutOutline,
+  IoNotificationsOutline,
 } from "react-icons/io5";
-import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
-import Swal from "sweetalert2";
 
 const MobileNavbar = () => {
-  const router = useRouter();
 
-  const handleLogout = () => {
-    Swal.fire({
-      title: "Logout",
-      text: "Mau Logout?",
-      showCancelButton: true,
-      confirmButtonText: "Yups, dah males!",
-      cancelButtonText: "Ga Jadi",
-      confirmButtonColor: "#10b981",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Cookies.remove("token");
-        Cookies.remove("id");
-        router.push("/login");
-      }
-    });
-  };
   return (
     <div>
       <div className=" fixed z-50 w-80 h-16 max-w-lg -translate-x-1/2 bg-slate-100 border border-gray-200 rounded-lg bottom-4 left-1/2">
@@ -105,20 +85,19 @@ const MobileNavbar = () => {
             <div className="tooltip-arrow" data-popper-arrow></div>
           </div>
           <button
-            onClick={handleLogout}
             data-tooltip-target="tooltip-profile"
             type="button"
             className="inline-flex flex-col items-center justify-center px-5 rounded-e-lg hover:bg-gray-50 group"
           >
-            <IoLogOutOutline />
-            <span className="sr-only">Logout</span>
+            <IoNotificationsOutline />
+            <span className="sr-only">Notification</span>
           </button>
           <div
             id="tooltip-profile"
             role="tooltip"
             className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip"
           >
-            Logout
+            Notification
             <div className="tooltip-arrow" data-popper-arrow></div>
           </div>
         </div>
