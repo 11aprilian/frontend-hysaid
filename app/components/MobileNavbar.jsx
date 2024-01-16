@@ -15,7 +15,7 @@ const MobileNavbar = () => {
       <div className=" fixed z-50 w-80 h-16 max-w-lg -translate-x-1/2 bg-slate-100 border border-gray-200 rounded-lg bottom-4 left-1/2">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
           <Link
-            href={"/"}
+            href={"/home"}
             data-tooltip-target="tooltip-home"
             type="button"
             className="inline-flex flex-col items-center justify-center px-5 rounded-s-lg hover:bg-gray-50 group"
