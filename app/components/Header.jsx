@@ -63,7 +63,7 @@ const Header = () => {
           data-te-navbar-ref
         >
           <div className="sm:py-1 flex justify-between  py-4 w-full items-center ms-8 px-3">
-            <h1 className="text-2xl font-bold text-gray-700">
+            <h1 className="text-2xl font-semibold text-gray-700">
               Hy<span className="text-emerald-500">Said</span>
             </h1>
             <div className="grid grid-cols-3 items-center">
